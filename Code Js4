@@ -1,0 +1,42 @@
+/** 
+* Direction:
+* Find all fields that have different value & must can detect all field dynamically 
+* 
+* Expected Result: 
+* ['firstName', 'lastName'] 
+* 
+*/ 
+
+const data = [ 
+{ firstName: 'Adi', lastName: 'Nugroho', age: 25 }, 
+{ firstName: 'Deddy', lastName: 'Dores', age: 25 }, ]; 
+
+//create array
+let datas = [];
+
+function result(data) { 
+// mycode here
+//push value to array
+data.map (item=> {
+    datas.push (item.firstName);
+    datas.push (item.lastName);
+    datas.push (item.age);
+})
+
+// comparison
+let x = datas.length/data.length;
+let text = "[";
+for (y=0; y<x; y++) {
+    if (datas [y] != datas [x+y]) {
+        
+        text += datas [y] + ", ";
+        text += datas [y+x] + ",";
+        }
+}
+
+//return text
+return text = text.slice (0, -1) + "]";
+
+} 
+
+console.log (result (data));
